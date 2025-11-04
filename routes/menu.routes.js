@@ -2,44 +2,10 @@ const express = require('express');
 const router = express.Router();
 const menuController = require('../controllers/menu.controller');
 const { authMiddleware, roleCheck } = require('../middleware/auth.middleware');
-// const multer = require('multer');
-// const path = require('path');
-// const fs = require('fs');
-// const upload=require('../middleware/upload')
-
-// // Create uploads directory if it doesn't exist
-// const uploadsDir = 'uploads';
-// if (!fs.existsSync(uploadsDir)) {
-//   fs.mkdirSync(uploadsDir, { recursive: true });
-// }
-
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'uploads/');
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, `${Date.now()}-${file.originalname}`);
-//   }
-// });
-
-// const fileFilter = (req, file, cb) => {
-//   // Accept images only
-//   const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-  
-//   if (allowedMimeTypes.includes(file.mimetype)) {
-//     cb(null, true);
-//   } else {
-//     cb(null, false); // Changed from cb(new Error(...)) to cb(null, false)
-//   }
-// };
-
-// const upload = multer({
-//   storage: storage,
-//   fileFilter: fileFilter,
-//   limits: {
-//     fileSize: 5 * 1024 * 1024 // 5MB limit
-//   }
-// });
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const upload=require('../middleware/upload.js')
 
 // Public routes
 router.get('/categories', menuController.getCategories);
