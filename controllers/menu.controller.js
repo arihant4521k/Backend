@@ -184,9 +184,9 @@ exports.deleteCategory = async (req, res) => {
 exports.createMenuItem = async (req, res) => {
   try {
     const item = new MenuItem(req.body);
-    
+    console.log(req.file)
     if (req.file) {
-      item.imageUrl = `/uploads/${req.file.filename}`;
+      item.imageUrl = req.file ? req.file.path : null
     }
     
     await item.save();
@@ -206,7 +206,8 @@ exports.createMenuItem = async (req, res) => {
 exports.updateMenuItem = async (req, res) => {
   try {
     if (req.file) {
-      req.body.imageUrl = `/uploads/${req.file.filename}`;
+      // req.body.imageUrl = `/uploads/${req.file.filename}`;
+      req.body.imageUrl = req.file ? req.file.path : null
     }
     
     const item = await MenuItem.findByIdAndUpdate(

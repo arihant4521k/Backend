@@ -21,7 +21,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 
 // MongoDB Connection (FIXED - removed deprecated options)
 mongoose.connect(process.env.MONGO_URI)
