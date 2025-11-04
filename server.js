@@ -6,19 +6,28 @@ const authRoutes = require('./routes/auth.routes');
 const menuRoutes = require('./routes/menu.routes');
 const orderRoutes = require('./routes/order.routes');
 const tableRoutes = require('./routes/table.routes');
-const fs = require('fs');
-const uploadsDir = './uploads';
+// const fs = require('fs');
+// const uploadsDir = './uploads';
 
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
-}
+// if (!fs.existsSync(uploadsDir)) {
+//   fs.mkdirSync(uploadsDir, { recursive: true });
+// }
 
 dotenv.config();
 
 const app = express();
 
 // Middleware
-app.use(cors());
+// server.js
+app.use(cors({
+  origin: [
+    'http://localhost:3000', // Development
+    'https://codeflayers.tech', // ✅ Add your custom domain
+    'https://www.codeflayers.tech', // ✅ Add www version
+    process.env.FRONTEND_URL
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use('/uploads', express.static('uploads'));
