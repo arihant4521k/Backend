@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const menuController = require('../controllers/menu.controller');
 const { authMiddleware, roleCheck } = require('../middleware/auth.middleware');
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
-const upload=require('../middleware/upload')
+// const multer = require('multer');
+// const path = require('path');
+// const fs = require('fs');
+// const upload=require('../middleware/upload')
 
 // // Create uploads directory if it doesn't exist
 // const uploadsDir = 'uploads';
