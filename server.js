@@ -7,11 +7,11 @@ const menuRoutes = require('./routes/menu.routes.js');
 const orderRoutes = require('./routes/order.routes.js');
 const tableRoutes = require('./routes/table.routes.js');
 const fs = require('fs');
-const uploadsDir = './uploads';
+// const uploadsDir = './uploads';
 
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
-}
+// if (!fs.existsSync(uploadsDir)) {
+//   fs.mkdirSync(uploadsDir, { recursive: true });
+// }
 
 dotenv.config();
 
