@@ -5,7 +5,7 @@ const { authMiddleware, roleCheck } = require('../middleware/auth.middleware');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const upload=require('../middleware/upload.js')
+const upload=require('../middleware/upload')
 
 // Public routes
 router.get('/categories', menuController.getCategories);
