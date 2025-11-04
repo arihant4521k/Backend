@@ -1,4 +1,4 @@
-const Table = require('../models/Table.model');
+const Table = require('../models/Table.model.js');
 const QRCode = require('qrcode');
 const { nanoid } = require('nanoid');
 

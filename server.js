@@ -2,23 +2,23 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const authRoutes = require('./routes/auth.routes');
-const menuRoutes = require('./routes/menu.routes');
-const orderRoutes = require('./routes/order.routes');
-const tableRoutes = require('./routes/table.routes');
-// const fs = require('fs');
-// const uploadsDir = './uploads';
+const authRoutes = require('./routes/auth.routes.js');
+const menuRoutes = require('./routes/menu.routes.js');
+const orderRoutes = require('./routes/order.routes.js');
+const tableRoutes = require('./routes/table.routes.js');
+const fs = require('fs');
+const uploadsDir = './uploads';
 
-// if (!fs.existsSync(uploadsDir)) {
-//   fs.mkdirSync(uploadsDir, { recursive: true });
-// }
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 dotenv.config();
 
 const app = express();
 
 // Middleware
-// server.js
+
 app.use(cors({
   origin: [
     'http://localhost:3000', // Development

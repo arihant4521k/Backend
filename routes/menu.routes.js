@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const menuController = require('../controllers/menu.controller');
-const { authMiddleware, roleCheck } = require('../middleware/auth.middleware');
+const menuController = require('../controllers/menu.controller.js');
+const { authMiddleware, roleCheck } = require('../middleware/auth.middleware.js');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');

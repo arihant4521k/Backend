@@ -1,5 +1,5 @@
-const MenuItem = require('../models/MenuItem.model');
-const MenuCategory = require('../models/MenuCategory.model');
+const MenuItem = require('../models/MenuItem.model.js');
+const MenuCategory = require('../models/MenuCategory.model.js');
 
 exports.getCategories = async (req, res) => {
   try {

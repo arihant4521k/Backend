@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const tableController = require('../controllers/table.controller');
-const { authMiddleware, roleCheck } = require('../middleware/auth.middleware');
+const tableController = require('../controllers/table.controller.js');
+const { authMiddleware, roleCheck } = require('../middleware/auth.middleware.js');
 
 router.get('/by-slug/:slug', tableController.getTableBySlug);
 

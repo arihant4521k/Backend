@@ -1,45 +1,7 @@
-// const express = require('express');
-// const router = express.Router();
-// const orderController = require('../controllers/order.controller');
-// const { authMiddleware, roleCheck, optionalAuth } = require('../middleware/auth.middleware');
-
-// router.post('/', optionalAuth, orderController.createOrder);
-
-// router.get('/', 
-//   authMiddleware, 
-//   roleCheck('staff', 'admin'), 
-//   orderController.getOrders
-// );
-
-// router.get('/stats', 
-//   authMiddleware, 
-//   roleCheck('staff', 'admin'), 
-//   orderController.getOrderStats
-// );
-
-// router.get('/me', 
-//   authMiddleware, 
-//   orderController.getMyOrders
-// );
-
-// router.get('/:id', 
-//   authMiddleware, 
-//   orderController.getOrder
-// );
-
-// router.patch('/:id/status', 
-//   authMiddleware, 
-//   roleCheck('staff', 'admin'), 
-//   orderController.updateOrderStatus
-// );
-
-// module.exports = router;
-
-
 const express = require('express');
 const router = express.Router();
-const orderController = require('../controllers/order.controller');
-const { authMiddleware, roleCheck, optionalAuth } = require('../middleware/auth.middleware');
+const orderController = require('../controllers/order.controller.js');
+const { authMiddleware, roleCheck, optionalAuth } = require('../middleware/auth.middleware.js');
 
 // Create order - guest allowed
 router.post('/', optionalAuth, orderController.createOrder);
